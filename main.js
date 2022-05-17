@@ -4,6 +4,7 @@ document.querySelector('#search-icon').onclick = () => {
     search.classList.toggle('active');
     cart.classList.remove('active');
     user.classList.remove('active');
+    navbar.classList.remove('active');
 }
 
 let cart = document.querySelector('.cart-box');
@@ -12,6 +13,7 @@ document.querySelector('#cart-icon').onclick = () => {
     cart.classList.toggle('active');
     search.classList.remove('active');
     user.classList.remove('active');
+    navbar.classList.remove('active');
 }
 
 let user = document.querySelector('.user-box');
@@ -20,7 +22,30 @@ document.querySelector('#user-icon').onclick = () => {
     user.classList.toggle('active');
     cart.classList.remove('active');
     search.classList.remove('active');
+    navbar.classList.remove('active');
 }
+
+let navbar = document.querySelector('.nav-bar');
+
+document.querySelector('#menu-icon').onclick = () => {
+    navbar.classList.toggle('active');
+    search.classList.remove('active');
+    cart.classList.remove('active');
+    user.classList.remove('active');
+}
+
+window.onscroll = () => {
+    search.classList.remove('active');
+    cart.classList.remove('active');
+    user.classList.remove('active');
+    navbar.classList.remove('active');
+}
+
+// Navbar Scroll
+let header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    header.classList.toggle('shadow', window.scrollY > 0);
+});
 
 // Swiper
 var swiper = new Swiper(".new-arrival", {
